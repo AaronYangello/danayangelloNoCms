@@ -30,6 +30,10 @@
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<script src="/js/PDFObject/pdfobject.min.js"></script>
+	
 
 </head>
 
@@ -99,16 +103,10 @@
 		   	<div class="row">
 		   		<div class="col-twelve">		   			
 			  		
-			  				<h1 class="animate-intro">Dana Yangello</h1>
-				  			<h3 class="animate-intro">Actor/Singer/Dancer</h3>	
+                    <h1 class="animate-intro">Dana Yangello</h1>
+                    <h3 class="animate-intro">Actor/Singer/Dancer</h3>						
 
-				  			<div class="more animate-intro">
-				  				<a class="smoothscroll button stroke" href="#about">
-				  					Learn More
-				  				</a>
-				  			</div>							
-
-			  		</div> <!-- end col-twelve --> 
+                </div> <!-- end col-twelve --> 
 		   	</div> <!-- end row --> 
 		   </div> <!-- end home-content-tablecell --> 		   
 		</div> <!-- end home-content-table -->
@@ -138,108 +136,31 @@
    </section> <!-- end home -->
 
 
-   <!-- about
+   <!-- Resumes and Reels
    ================================================== -->
-   <section id="about">
+   <section id="res-and-reels">
 
    	<div class="row about-wrap">
    		<div class="col-full">
 
-   			<div class="about-profile-bg"></div>
+   			<div class="res-and-reels-profile-bg"></div>
 
-				<div class="intro">
-					<h3 class="animate-this">About Us</h3>
-	   			<p class="lead animate-this"><span>Infinity</span> is a creative digital agency based in Manila, Philippines. We are composed of creative designers and experienced developers.</p>	
-				</div>   
+            <div class="intro">
+                <h3 class="animate-this">Resume and Reels</h3>
+                <div id="resume" class="animate-this"></div>	
+            </div>
+            
+            <div class="row">
+                <div class="col-1-2" style="padding: 1rem 1rem;"><a class="button button-primary full-width" href="#">Acting Reel</a></div>
+                <div class="col-1-2" style="padding: 1rem 1rem;"><a href="" class="button button-primary full-width">Dance Reel</a></div>
+		    </div>
 
    		</div> <!-- end col-full  -->
    	</div> <!-- end about-wrap  -->
 
-   </section> <!-- end about -->
-
-
-   <!-- about
-   ================================================== -->
-   <section id="services">
-
-   	<div class="overlay"></div>
-   	<div class="gradient-overlay"></div>
-   	
-   	<div class="row narrow section-intro with-bottom-sep animate-this">
-   		<div class="col-full">
-   			
-   				<h3>Services</h3>
-   			   <h1>What We Do.</h1>
-   			
-   			   <p class="lead">Lorem ipsum Elit ut consequat veniam eu nulla nulla reprehenderit reprehenderit sit velit in cupidatat ex aliquip ut cupidatat Excepteur tempor id irure sed dolore sint sunt voluptate ullamco nulla qui Duis qui culpa voluptate enim ea aute qui veniam in irure et nisi nostrud deserunt est officia minim.</p>
-   			
-   	   </div> <!-- end col-full -->
-   	</div> <!-- end row -->
-
-   	<div class="row services-content">
-
-   		<div class="services-list block-1-2 block-tab-full group">
-
-	      	<div class="bgrid service-item animate-this">	
-
-	      		<span class="icon"><i class="icon-paint-brush"></i></span>            
-
-	            <div class="service-content">
-	            	<h3 class="h05">Branding</h3>
-
-		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>	         		
-	         	</div> 	         	 
-
-				</div> <!-- end bgrid -->
-
-				<div class="bgrid service-item animate-this">	
-
-					<span class="icon"><i class="icon-earth"></i></span>                          
-
-	            <div class="service-content">	
-	            	<h3 class="h05">Web Design</h3>  
-
-		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>	         		
-	            </div>	                          
-
-			   </div> <!-- end bgrid -->
-
-			   <div class="bgrid service-item animate-this">
-
-			   	<span class="icon"><i class="icon-lego-block"></i></span>		            
-
-	            <div class="service-content">
-	            	<h3 class="h05">Web Development</h3>
-
-		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	        			</p>
-	            </div> 	            	               
-
-			   </div> <!-- end bgrid -->
-
-				<div class="bgrid service-item animate-this">
-
-					<span class="icon"><i class="icon-megaphone"></i></span>	              
-
-	            <div class="service-content">
-	            	<h3 class="h05">Marketing</h3>
-
-		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-	         		</p>	         		
-	            </div>                
-
-				</div> <!-- end bgrid -->			   
-
-	      </div> <!-- end services-list -->
-   		
-   	</div> <!-- end services-content -->   			
-
-   </section> <!-- end services -->
-
-
-   <!-- portfolio
+   </section> <!-- end res and reels -->
+   
+    <!-- portfolio
    ================================================== -->
    <section id="portfolio">
    	
@@ -247,10 +168,7 @@
 
    		<div class="row narrow section-intro with-bottom-sep animate-this">
 	   		<div class="col-twelve">
-	   			<h3>Showcase</h3>
-		   		<h1>See Our Featured Projects.</h1>  			
-		   		
-		   		<p class="lead">Lorem ipsum Dolor adipisicing nostrud et aute Excepteur amet commodo ea dolore irure esse Duis nulla sint fugiat cillum ullamco proident aliquip quis qui voluptate dolore veniam Ut laborum non est in officia.</p>	   			
+	   			<h3>Gallery</h3>
 	   		</div>   		
 	   	</div> <!-- end row section-intro -->   		
 
@@ -397,6 +315,87 @@
    	</div> <!-- end portfolio-content -->   	
 
    </section>  <!-- end portfolio -->
+
+
+   <!-- about
+   ================================================== -->
+   <section id="services">
+
+   	<div class="overlay"></div>
+   	<div class="gradient-overlay"></div>
+   	
+   	<div class="row narrow section-intro with-bottom-sep animate-this">
+   		<div class="col-full">
+   			
+   				<h3>Services</h3>
+   			   <h1>What We Do.</h1>
+   			
+   			   <p class="lead">Lorem ipsum Elit ut consequat veniam eu nulla nulla reprehenderit reprehenderit sit velit in cupidatat ex aliquip ut cupidatat Excepteur tempor id irure sed dolore sint sunt voluptate ullamco nulla qui Duis qui culpa voluptate enim ea aute qui veniam in irure et nisi nostrud deserunt est officia minim.</p>
+   			
+   	   </div> <!-- end col-full -->
+   	</div> <!-- end row -->
+
+   	<div class="row services-content">
+
+   		<div class="services-list block-1-2 block-tab-full group">
+
+	      	<div class="bgrid service-item animate-this">	
+
+	      		<span class="icon"><i class="icon-paint-brush"></i></span>            
+
+	            <div class="service-content">
+	            	<h3 class="h05">Branding</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>	         		
+	         	</div> 	         	 
+
+				</div> <!-- end bgrid -->
+
+				<div class="bgrid service-item animate-this">	
+
+					<span class="icon"><i class="icon-earth"></i></span>                          
+
+	            <div class="service-content">	
+	            	<h3 class="h05">Web Design</h3>  
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>	         		
+	            </div>	                          
+
+			   </div> <!-- end bgrid -->
+
+			   <div class="bgrid service-item animate-this">
+
+			   	<span class="icon"><i class="icon-lego-block"></i></span>		            
+
+	            <div class="service-content">
+	            	<h3 class="h05">Web Development</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p>
+	            </div> 	            	               
+
+			   </div> <!-- end bgrid -->
+
+				<div class="bgrid service-item animate-this">
+
+					<span class="icon"><i class="icon-megaphone"></i></span>	              
+
+	            <div class="service-content">
+	            	<h3 class="h05">Marketing</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>	         		
+	            </div>                
+
+				</div> <!-- end bgrid -->			   
+
+	      </div> <!-- end services-list -->
+   		
+   	</div> <!-- end services-content -->   			
+
+   </section> <!-- end services -->
 
 
    <!-- Testimonials Section
@@ -679,5 +678,7 @@
    <script src="js/main.js"></script>
 
 </body>
+
+<script>PDFObject.embed("/docs/Resume.pdf", "#resume");</script>
 
 </html>

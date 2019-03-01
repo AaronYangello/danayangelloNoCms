@@ -15,7 +15,7 @@
  *  08. common and reusable styles 
  *  09. header styles
  *  10. home
- *  11. about
+ *  11. res-and-reels
  *  12. services
  *  13. portfolio
  *  14. testimonials
@@ -767,8 +767,10 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  background: #151515;
-  color: #FFFFFF;
+  background: var(--theme-pink-light);
+  color: #000000;
+  border: 2px solid #000;
+  border-radius: 2px;
 }
 
 .button.button-primary:hover,
@@ -782,7 +784,8 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  background: #030303;
+  background: rgba(21, 21, 21, 0.9);
+  color: #FFFFFF;
 }
 
 button.full-width, .button.full-width {
@@ -1778,23 +1781,23 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 
 /* ===================================================================
- *  11. about - (_layout.scss)
+ *  11. res-and-reels - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
-#about {
+#res-and-reels {
   position: relative;
   padding: 4.2rem 0 12rem;
   background-color: #FFFFFF;
   min-height: 696px;
   text-align: center;
 }
-#about .about-wrap {
+#res-and-reels .res-and-reels-wrap {
   max-width: 850px;
 }
-#about span {
+#res-and-reels span {
   color: #07617d;
 }
-#about h3 {
+#res-and-reels h3 {
   font-family: "montserrat-bold", sans-serif;
   font-size: 1.8rem;
   line-height: 1.667;
@@ -1803,7 +1806,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   letter-spacing: .3rem;
   position: relative;
 }
-#about h3::before {
+#res-and-reels h3::before {
   display: block;
   content: "";
   width: 3px;
@@ -1811,7 +1814,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   background-color: rgba(149, 149, 149, 0.7);
   margin: 0 auto 2.4rem;
 }
-#about .lead {
+#res-and-reels .lead {
   font-family: "librebaskerville-bold", serif;
   font-size: 4rem;
   line-height: 1.8;
@@ -1821,66 +1824,66 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 /* ------------------------------------------------------------------- 
  * responsive:
- * about 
+ * res-and-reels 
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 1024px) {
-  #about {
+  #res-and-reels {
     min-height: 636px;
   }
-  #about .about-wrap {
+  #res-and-reels .res-and-reels-wrap {
     max-width: 800px;
   }
-  #about .lead {
+  #res-and-reels .lead {
     font-size: 3.8rem;
   }
 }
 @media only screen and (max-width: 900px) {
-  #about .about-wrap {
+  #res-and-reels .res-and-reels-wrap {
     max-width: 720px;
   }
-  #about .lead {
+  #res-and-reels .lead {
     font-size: 3.6rem;
   }
 }
 @media only screen and (max-width: 768px) {
-  #about h3 {
+  #res-and-reels h3 {
     font-size: 1.7rem;
   }
-  #about .about-wrap {
+  #res-and-reels .res-and-reels-wrap {
     max-width: 600px;
   }
-  #about .lead {
+  #res-and-reels .lead {
     font-size: 3.1rem;
   }
 }
 @media only screen and (max-width: 600px) {
-  #about {
+  #res-and-reels {
     min-height: auto;
   }
-  #about .about-wrap {
+  #res-and-reels .res-and-reels-wrap {
     max-width: 500px;
   }
-  #about .lead {
+  #res-and-reels .lead {
     margin-top: 4.8rem;
     font-size: 2.8rem;
   }
 }
 @media only screen and (max-width: 500px) {
-  #about h3 {
+  #res-and-reels h3 {
     font-size: 1.5rem;
   }
-  #about .lead {
+  #res-and-reels .lead {
     font-size: 2.5rem;
   }
 }
 @media only screen and (max-width: 400px) {
-  #about {
+  #res-and-reels {
     padding: 4.2rem 0 9.6rem;
   }
-  #about .about-wrap {
+  #res-and-reels .res-and-reels-wrap {
     max-width: 380px;
   }
-  #about .lead {
+  #res-and-reels .lead {
     font-size: 2.3rem;
   }
 }
