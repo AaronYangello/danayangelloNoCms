@@ -82,7 +82,7 @@
 
   		$WIN.on('load', function() {
 
-		   $('#testimonial-slider').flexslider({
+		   $('#news-slider').flexslider({
 		   	namespace: "flex-",
 		      controlsContainer: "",
 		      animation: 'slide',
