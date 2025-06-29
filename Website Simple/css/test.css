@@ -1,0 +1,116 @@
+/* 1. Reset and Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Base typography */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+               Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* system-font stack */ 
+  font-size: 16px;              /* base font size */ 
+  line-height: 1.5;             /* comfortable line height */ 
+  letter-spacing: 0.02em;       /* slight letter spacing */ 
+}
+
+body {
+  color: #333;
+  background-color: #fafafa;
+}
+
+/* 3. Layout containers */
+nav, header, main, section {
+  width: 90%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 4. Navigation */
+nav ul {
+  list-style: none;
+  display: flex;                /* horizontal layout */ 
+  flex-wrap: wrap;              /* wrap on narrow screens */ 
+  justify-content: center;      /* center items */ 
+  gap: 1rem;                    /* space between links */ 
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+/* 5. Header */
+header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* 6. Sections */
+section {
+  background-color: #fff;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+section p {
+  margin-bottom: 1rem;         /* vertical rhythm */ 
+}
+
+/* 7. “See More!” footer in sections */
+section h3 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #007acc;
+}
+
+/* 8. Responsive images placeholder */
+section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* 9. Responsive adjustments */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;     /* stack nav links */ 
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 2rem;            /* slightly smaller on mobile */ 
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
