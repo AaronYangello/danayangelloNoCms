@@ -28,7 +28,7 @@ const NavBar = ({ activeItem }) => {
             <ul className="hidden md:flex space-x-4">
                 {navItems.map(item => {
                     const isActive = activeItem === item.name;
-                    const activeClasses = isActive ? "bg-dark-primary text-white" : "text-dark-primary";
+                    const activeClasses = isActive ? "bg-dark-primary text-white" : "text-dark-primary hover:text-dark-gray";
                     return (
                         <li key={item.name} className={`${navBaseStyle} ${activeClasses}`}>
                             <a href={item.href}>{item.name}</a>

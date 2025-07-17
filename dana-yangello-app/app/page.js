@@ -1,6 +1,6 @@
-import '../styles/globals.css'; 
-import Header from '../components/Header';
-import HomePageSection from '../components/HomePageSection';
+import '@/styles/globals.css'; 
+import Header from '@/components/Header';
+import HomePageSection from '@/components/HomePageSection';
 
 export default function Home() {
   const headerDetails = {

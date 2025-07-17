@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
+    // Make `.` (your project root) a valid import root
+    "baseUrl": ".",
+    // (Optional) Define path aliases
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],                   // `@/components/NavBar` → `./components/NavBar`
+      "@components/*": ["components/*"],// `@components/NavBar`   → `components/NavBar`
+      "@lib/*": ["lib/*"],              // etc.
+      "@styles/*": ["styles/*"]
     }
   }
 }
