@@ -1,103 +1,64 @@
-import Image from "next/image";
+import '../styles/globals.css'; 
+import Header from '../components/Header';
+import HomePageSection from '../components/HomePageSection';
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const headerDetails = {
+    pageName: "Home",
+    title: "Dana Yangello",
+    subtitle: "Actor | Dancer | Improviser",
+    backgroundImgPath: "/img/home-header-bg.jpg"
+  }
+  const sections = [
+    {
+      title: "Actor",
+      theme: "dark",
+      heroImagePath: "/img/quirky-cute-techie.jpg",
+      reelLink: "https://www.youtube.com/embed/DSwA93tVi3s?si=EddokwM7KRJs6z7w",
+      reelLabel: "YouTube Video, Dana Yangello",
+      seeMore: `Grew up in the Musical Theatre world in, small town, Pennsville,NJ. In 2017, moved to LA and the film journey began! Recent bookings include Intel print, "Geisting" (film), & the short "New Year's Eve Kiss" from the Flighthouse content creators.
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+Had the pleasure of training with Jenny Steadman for Killian's Commercial Workshop. Currently studying with Howard Fine for On-Camera & Audition Technique - LOVING IT!`
+    },
+    {
+      title: "Improviser",
+      theme: "light",
+      heroImagePath: "/img/improv.jpg",
+      reelLink: "https://www.youtube.com/embed/zu4yT8zBbok",
+      reelLabel: "YouTube Video, Dana Yangello Improv at UCB",
+      seeMore: `Upright Citizen's Brigade - A home away from home! Currently enrolled in level 401 Improv. Very grateful to have trained with Joel Spence (301 & On-going Improv Bootcamp), Susannah Becket (201), and Sarah Claspbell (101).`
+    },
+    {
+      title: "Dancer",
+      theme: "dark",
+      heroImagePath: "/img/sassy-bff-dance-site.jpg",
+      reelLink: "https://www.youtube.com/embed/1v6ucs6HFoQ",
+      reelLabel: "YouTube Video, DanaYangello Dance2020",
+      seeMore: `The love for Ballroom sparked in 2016 while at Rowan University (double majored in Theatre & Psychology) Competed collegiately for 3 years before moving to LA where I am a Ballroom Dance instructor and performer. Beyond thankful for my amazing coaches! I'm now doing what I can to share my love of dancing with the younger generation. Learn more about how at SisterSomething.com`
+    }
+  ];
+
+  return (
+    <html lang="en">
+      <body>
+        <Header
+          pageName={headerDetails.pageName}
+          title={headerDetails.title}
+          subtitle={headerDetails.subtitle}
+          backgroundImgPath={headerDetails.backgroundImgPath}
+        />
+        {sections.map((section, idx) => (
+          <HomePageSection
+            key={section.title}
+            title={section.title}
+            theme={section.theme}
+            heroImagePath={section.heroImagePath}
+            reelLink={section.reelLink}
+            reelLabel={section.reelLabel}
+            seeMore={section.seeMore}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        ))}
+      </body>
+    </html>
   );
 }
