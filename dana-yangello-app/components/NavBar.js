@@ -3,20 +3,20 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const NavBar = ({ activeItem }) => {
+export default function NavBar ({ activeItem }) {
     const [open, setOpen] = useState(false);
     const navItems = [
         { name: 'Home', href: '/' },
         { name: 'Projects', href: 'https://sites.google.com/view/dreambigcontent/home' },
-        { name: 'Resume', href: 'Resume.html' },
-        { name: 'Gallery', href: 'Gallery.html' },
-        { name: 'Contact', href: 'Contact.hml' }
+        { name: 'Resume', href: 'Resume' },
+        { name: 'Gallery', href: 'Gallery' },
+        { name: 'Contact', href: 'Contact' }
     ];
 
     //Common styling for every nav item
     const navBaseStyle = 'text-base font-open-sans px-3 py-1';
     return (
-        <nav className="w-full py-3 pr-7 flex justify-end items-center">
+        <nav className="w-full py-3 pr-7 flex">
             {/* Hamburger button (shown on small only) */}
             <button
                 className="md:hidden p-2 focus:outline-none"
@@ -58,5 +58,3 @@ const NavBar = ({ activeItem }) => {
         </nav>
     );
 };
-
-export default NavBar;

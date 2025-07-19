@@ -1,6 +1,6 @@
 import '@/styles/globals.css'; 
-import Header from '@/components/Header';
-import HomePageSection from '@/components/HomePageSection';
+import HomePageHeader from '@/app/HomePageHeader';
+import HomePageSection from '@/app/HomePageSection';
 
 export default function Home() {
   const headerDetails = {
@@ -12,7 +12,6 @@ export default function Home() {
   const sections = [
     {
       title: "Actor",
-      theme: "dark",
       heroImagePath: "/img/quirky-cute-techie.jpg",
       reelLink: "https://www.youtube.com/embed/DSwA93tVi3s?si=EddokwM7KRJs6z7w",
       reelLabel: "YouTube Video, Dana Yangello",
@@ -22,7 +21,6 @@ Had the pleasure of training with Jenny Steadman for Killian's Commercial Worksh
     },
     {
       title: "Improviser",
-      theme: "light",
       heroImagePath: "/img/improv.jpg",
       reelLink: "https://www.youtube.com/embed/zu4yT8zBbok",
       reelLabel: "YouTube Video, Dana Yangello Improv at UCB",
@@ -30,7 +28,6 @@ Had the pleasure of training with Jenny Steadman for Killian's Commercial Worksh
     },
     {
       title: "Dancer",
-      theme: "dark",
       heroImagePath: "/img/sassy-bff-dance-site.jpg",
       reelLink: "https://www.youtube.com/embed/1v6ucs6HFoQ",
       reelLabel: "YouTube Video, DanaYangello Dance2020",
@@ -41,7 +38,7 @@ Had the pleasure of training with Jenny Steadman for Killian's Commercial Worksh
   return (
     <html lang="en">
       <body>
-        <Header
+        <HomePageHeader
           pageName={headerDetails.pageName}
           title={headerDetails.title}
           subtitle={headerDetails.subtitle}
@@ -51,7 +48,7 @@ Had the pleasure of training with Jenny Steadman for Killian's Commercial Worksh
           <HomePageSection
             key={section.title}
             title={section.title}
-            theme={section.theme}
+            darkTheme={idx % 2 === 0}
             heroImagePath={section.heroImagePath}
             reelLink={section.reelLink}
             reelLabel={section.reelLabel}
