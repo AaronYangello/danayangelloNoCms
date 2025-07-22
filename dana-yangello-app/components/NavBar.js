@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-export default function NavBar ({ activeItem }) {
+export default function NavBar ({ activeItem, textColor = "text-dark-primary" }) {
     const [open, setOpen] = useState(false);
     const navItems = [
         { name: 'Home', href: '/' },
@@ -22,13 +22,13 @@ export default function NavBar ({ activeItem }) {
                 className="md:hidden p-2 focus:outline-none"
                 onClick={() => setOpen(o => !o)}
             >
-                {open ? <XMarkIcon className="h-6 w-6 text-dark-primary" /> : <Bars3Icon className="h-6 w-6 text-dark-primary" />}
+                {open ? <XMarkIcon className={`h-6 w-6 ${textColor}`} /> : <Bars3Icon className={`h-6 w-6 ${textColor}`} />}
             </button>
             {/* Desktop menu (hidden on small) */}
             <ul className="hidden md:flex space-x-4">
                 {navItems.map(item => {
                     const isActive = activeItem === item.name;
-                    const activeClasses = isActive ? "bg-dark-primary text-white" : "text-dark-primary hover:text-dark-gray";
+                    const activeClasses = isActive ? "bg-dark-primary text-white" : `${textColor} hover:text-dark-gray`;
                     return (
                         <li key={item.name} className={`${navBaseStyle} ${activeClasses}`}>
                             <a href={item.href}>{item.name}</a>
@@ -44,7 +44,7 @@ export default function NavBar ({ activeItem }) {
                     const isActive = activeItem === item.name;
                     const activeCls = isActive
                     ? 'bg-dark-primary text-white'
-                    : 'text-dark-primary hover:bg-gray-100';
+                    : `${textColor} hover:bg-gray-100`;
                     return (
                     <li key={item.name} className={`${navBase} ${activeCls}`}>
                         <a href={item.href} onClick={() => setOpen(false)}>
