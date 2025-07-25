@@ -53,6 +53,9 @@ I am an actor, improviser, and ballroom dancer, located in Burbank, CA. I was bo
 
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href='/img/favicon.ico'/>
+            </head>
             <body className="bg-dark-gray">
                 <ContactHeader
                     pageName={headerDetails.pageName}

@@ -37,6 +37,9 @@ Had the pleasure of training with Jenny Steadman for Killian's Commercial Worksh
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href='/img/favicon.ico'/>
+      </head>
       <body>
         <HomePageHeader
           pageName={headerDetails.pageName}

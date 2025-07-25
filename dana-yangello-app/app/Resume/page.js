@@ -15,6 +15,9 @@ export default function Resume() {
 
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href='/img/favicon.ico'/>
+            </head>
             <body className="bg-dark-gray">
                 <ResumeHeader
                     pageName={headerDetails.pageName}

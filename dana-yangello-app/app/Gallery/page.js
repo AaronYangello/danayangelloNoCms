@@ -61,6 +61,9 @@ export default function Gallery() {
 
     return (
         <html lang="en">
+            <head>
+                <link rel="icon" href='/img/favicon.ico'/>
+            </head>
             <body className="bg-dark-gray">
                 <GalleryHeader
                     pageName={headerDetails.pageName}
