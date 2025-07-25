@@ -57,7 +57,7 @@ export default function Gallery() {
             videoUrl: "https://www.youtube.com/embed/QdaPlN7CJJA",
             description: "Christmas Means to Me"  
         }
-    ]
+    ];
 
     return (
         <html lang="en">
