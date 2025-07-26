@@ -1,17 +1,20 @@
+'use client'
+import { useState, useEffect } from 'react';
+import { getPageHeaderDetails } from '@/app/actions'
+import { getResumeDetails } from '@/app/actions'
+
 import '@/styles/globals.css';
 import ResumeHeader from '@/app/Resume/ResumeHeader';
 
 export default function Resume() {
-    const headerDetails = {
-        pageName: "Resume",
-        title: "Resume",
-        subtitle: "",
-        backgroundImgPath: "/img/resume-header-bg.jpg"
-    };
+    const pageName = "Resume"
+    const [headerDetails, setHeaderDetails] = useState([]);
+    const [resumeDetails, setResumeDetails] = useState([]);
 
-    const pdfUrl = "https://drive.google.com/file/d/1M7Ou7mDQtVdrpJXuMfz1ItnHpkaFyHH4/preview";
-    const headshot1 = "/img/Dyangello1.jpg";
-    const headshot2 = "/img/Resume2.jpg";
+    useEffect(() => {
+        getPageHeaderDetails(pageName).then(setHeaderDetails).catch(console.error);
+        getResumeDetails().then(setResumeDetails).catch(console.error);
+    }, []);
 
     return (
         <html lang="en">
@@ -31,12 +34,12 @@ export default function Resume() {
                         className="flex flex-col-reverse md:flex-row items-center md:items-stretch gap-8">
                         <div className="flex flex-col gap-8 md:w-[300px] flex-shrink-0">
                             <img
-                                src={headshot1}
+                                src={resumeDetails.headshot1}
                                 alt="Headshot 1"
                                 className="w-full h-auto object-cover rounded shadow-md"
                             />
                             <img
-                                src={headshot2}
+                                src={resumeDetails.headshot2}
                                 alt="Headshot 2"
                                 className="w-full h-auto object-cover rounded shadow-md"
                             />
@@ -44,7 +47,7 @@ export default function Resume() {
 
                         <div className="flex-1">
                             <iframe
-                                src={pdfUrl}
+                                src={resumeDetails.pdfUrl}
                                 className="w-full h-[400px] md:h-full rounded shadow-md"
                                 title="Resume PDF"
                                 loading="lazy"

@@ -1,63 +1,26 @@
+'use client'
+import { useState, useEffect } from 'react';
+import { getPageHeaderDetails } from '@/app/actions'
+import { getGalleryVideos } from '@/app/actions'
+
 import '@/styles/globals.css';
 import GalleryHeader from '@/app/Gallery/GalleryHeader';
 import VideoSection from '@/app/Gallery/VideoSection';
 
 export default function Gallery() {
-    const headerDetails = {
-        pageName: "Gallery",
-        portraitPaths: [
-            "/img/Dana Yangello.jpg",
-            "/img/Dyangello1.jpg",
-            "/img/DanaYangello_Office.jpg",
-            "/img/Theatrical.jpg"
-        ]
-    };
+    const pageName = "Gallery";
+    const reelsSectionTitle = "Reels";
+    const parodiesSectionTitle = "Parodies";
 
-    const reels = [
-            {
-                thumbnail: "/img/thumbnails/dana_reel23_thumb.jpg",
-                videoUrl: "https://www.youtube.com/embed/7lKeKHi2GpY",
-                description: "2023 Reel"  
-            },
-            {
-                thumbnail: "/img/thumbnails/dance2020-thumb.jpg",
-                videoUrl: "https://www.youtube.com/embed/1v6ucs6HFoQ",
-                description: "Dance Reel 2020"
-            },
-            {
-                thumbnail: "/img/thumbnails/improv-at-ucb-thumb.jpg",
-                videoUrl: "https://www.youtube.com/embed/zu4yT8zBbok",
-                description: "Improv Reel"
-            }
-        ];
-    
-    const parodies = [
-        {
-            thumbnail: "/img/thumbnails/got-5-days-thumb.jpg",
-            videoUrl: "https://www.youtube.com/embed/AyP0HWnMELY",
-            description: "I've Got 5 Days"  
-        },
-        {
-            thumbnail: "/img/thumbnails/presents-and-bows-thumb.jpg",
-            videoUrl: "https://www.youtube.com/embed/MDwU5Nkro6M",
-            description: "Presents and Bows"  
-        },
-        {
-            thumbnail: "/img/thumbnails/all-i-want-thumb.jpg",
-            videoUrl: "https://www.youtube.com/embed/a1TDFk5kMmE",
-            description: "All I Want for Christmas"  
-        },
-        {
-            thumbnail: "/img/thumbnails/study-buddy-thumb.jpg",
-            videoUrl: "https://www.youtube.com/embed/J7bm4aPjbYI",
-            description: "Study Buddy"  
-        },
-        {
-            thumbnail: "/img/thumbnails/xmas-means-to-me-thumb.jpg",
-            videoUrl: "https://www.youtube.com/embed/QdaPlN7CJJA",
-            description: "Christmas Means to Me"  
-        }
-    ];
+    const [headerDetails, setHeaderDetails] = useState([]);
+    const [reels, setReels] = useState([]);
+    const [parodies, setParodies] = useState([]);
+
+    useEffect(() => {
+        getPageHeaderDetails(pageName).then(setHeaderDetails).catch(console.error);
+        getGalleryVideos(reelsSectionTitle).then(setReels).catch(console.error);
+        getGalleryVideos(parodiesSectionTitle).then(setParodies).catch(console.error);
+    }, []);
 
     return (
         <html lang="en">
@@ -70,11 +33,11 @@ export default function Gallery() {
                     portraitPaths={headerDetails.portraitPaths}
                 />
                 <VideoSection
-                    sectionTitle="Reels"
+                    sectionTitle={reelsSectionTitle}
                     videos={reels}
                 />
                 <VideoSection
-                    sectionTitle="Parodies"
+                    sectionTitle={parodiesSectionTitle}
                     videos={parodies}
                 />
             </body>

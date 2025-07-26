@@ -11,7 +11,7 @@ export default function GalleryHeader({
             </div>
             <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-center md:items-start md:space-y-0 md:space-x-10 w-[90%] max-w-5xl mx-auto pt-12 px-8">
 
-                {portraitPaths.map((path, index) => (
+                {portraitPaths && portraitPaths.map((path, index) => (
                     <img
                         key={index}
                         src={path}
