@@ -4,7 +4,6 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getGalleryVideos } from '@/app/actions'
 
 import '@/styles/globals.css';
-import Head from '@/components/Head';
 import GalleryHeader from '@/app/Gallery/GalleryHeader';
 import VideoSection from '@/app/Gallery/VideoSection';
 
@@ -24,22 +23,19 @@ export default function Gallery() {
     }, []);
 
     return (
-        <html lang="en">
-            <Head pageName={pageName}/>
-            <body className="bg-dark-gray">
-                <GalleryHeader
-                    pageName={headerDetails.pageName}
-                    portraitPaths={headerDetails.portraitPaths}
-                />
-                <VideoSection
-                    sectionTitle={reelsSectionTitle}
-                    videos={reels}
-                />
-                <VideoSection
-                    sectionTitle={parodiesSectionTitle}
-                    videos={parodies}
-                />
-            </body>
-        </html>
+        <div className="bg-dark-gray">
+            <GalleryHeader
+                pageName={headerDetails.pageName}
+                portraitPaths={headerDetails.portraitPaths}
+            />
+            <VideoSection
+                sectionTitle={reelsSectionTitle}
+                videos={reels}
+            />
+            <VideoSection
+                sectionTitle={parodiesSectionTitle}
+                videos={parodies}
+            />
+        </div>
     );
 }

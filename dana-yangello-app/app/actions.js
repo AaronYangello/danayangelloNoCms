@@ -211,7 +211,7 @@ export async function getTheNews() {
         newsItem.image = obj["Image"] || "";
         newsItem.title = obj["Title"] || "";
         newsItem.url = obj["URL"] || "";
-        newsItem.atl = obj["Description"] || "";
+        newsItem.alt = obj["Description"] || "";
         newsItem.preview = obj["Preview"] || "";
         news.push(newsItem);
     }
