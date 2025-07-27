@@ -140,6 +140,80 @@ export async function getGalleryVideos(section) {
         videoDetail.description = obj["Description"] || "";
         videoDetails.push(videoDetail);
     }
-    console.log(videoDetails);
   return videoDetails;
+}
+
+export async function getContactDetails() {
+  const spreadsheetId = process.env.CONTENT_SPREADSHEET_ID;
+  if (!spreadsheetId) {
+    throw new Error('Missing CONTENT_SPREADSHEET_ID in your .env.local');
+  }
+
+  let sheetName = process.env.CONTACT_DETAILS_SHEET_NAME;
+
+  if (!sheetName) {
+    throw new Error('Missing CONTACT_DETAILS_SHEET_NAME in your .env.local');
+  }
+
+  const content = await fetchSheetData(spreadsheetId, sheetName);
+  const contactDetails = {};
+  
+  for (const obj of content){
+        contactDetails.portrait = obj["Portrait"] || "";
+        contactDetails.email = obj["Email"] || "";
+        contactDetails.phone = obj["Phone"] || "";
+    }
+  return contactDetails;
+}
+
+export async function getSocials() {
+  const spreadsheetId = process.env.CONTENT_SPREADSHEET_ID;
+  if (!spreadsheetId) {
+    throw new Error('Missing CONTENT_SPREADSHEET_ID in your .env.local');
+  }
+
+  let sheetName = process.env.SOCIALS_SHEET_NAME;
+
+  if (!sheetName) {
+    throw new Error('Missing SOCIALS_SHEET_NAME in your .env.local');
+  }
+
+  const content = await fetchSheetData(spreadsheetId, sheetName);
+  const socials = [];
+  
+  for (const obj of content){
+        const social = {}
+        social.site = obj["Site"] || "";
+        social.url = obj["URL"] || "";
+        social.icon = obj["Icon"] || "";
+        socials.push(social);
+    }
+  return socials;
+}
+
+export async function getTheNews() {
+  const spreadsheetId = process.env.CONTENT_SPREADSHEET_ID;
+  if (!spreadsheetId) {
+    throw new Error('Missing CONTENT_SPREADSHEET_ID in your .env.local');
+  }
+
+  let sheetName = process.env.IN_THE_NEWS_SHEET_NAME;
+
+  if (!sheetName) {
+    throw new Error('Missing IN_THE_NEWS_SHEET_NAME in your .env.local');
+  }
+
+  const content = await fetchSheetData(spreadsheetId, sheetName);
+  const news = [];
+  
+  for (const obj of content){
+        const newsItem = {}
+        newsItem.image = obj["Image"] || "";
+        newsItem.title = obj["Title"] || "";
+        newsItem.url = obj["URL"] || "";
+        newsItem.atl = obj["Description"] || "";
+        newsItem.preview = obj["Preview"] || "";
+        news.push(newsItem);
+    }
+  return news;
 }

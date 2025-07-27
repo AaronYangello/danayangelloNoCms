@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-export default function NavBar ({ activeItem, textColor = "text-dark-primary" }) {
+export default function NavBar ({ activeItem, textColor = "text-dark-primary", textHoverColor = "text-dark-gray" }) {
     const [open, setOpen] = useState(false);
     const navItems = [
         { name: 'Home', href: '/' },
@@ -28,7 +28,7 @@ export default function NavBar ({ activeItem, textColor = "text-dark-primary" })
             <ul className="hidden md:flex space-x-4">
                 {navItems.map(item => {
                     const isActive = activeItem === item.name;
-                    const activeClasses = isActive ? "bg-dark-primary text-white" : `${textColor} hover:text-dark-gray`;
+                    const activeClasses = isActive ? "bg-dark-primary text-white" : `${textColor} hover:${textHoverColor}`;
                     return (
                         <li key={item.name} className={`${navBaseStyle} ${activeClasses}`}>
                             <a href={item.href}>{item.name}</a>

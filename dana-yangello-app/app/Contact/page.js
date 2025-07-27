@@ -1,61 +1,35 @@
+'use client'
+import { useState, useEffect } from 'react';
+import { getPageHeaderDetails } from '@/app/actions'
+import { getContactDetails } from '@/app/actions'
+import { getSocials } from '@/app/actions'
+import { getTheNews } from '@/app/actions'
+
 import '@/styles/globals.css';
+import Head from '@/app/Head';
 import ContactHeader from '@/app/Contact/ContactHeader';
 import Socials from '@/app/Contact/Socials';
 import News from '@/app/Contact/News';
 import ContactInfo from '@/app/Contact/ContactInfo';
 
 export default function Contact() {
-    const headerDetails = {
-        pageName: "Contact",
-        title: "Contact",
-        subtitle: "",
-        backgroundImgPath: "/img/contact-header-bg.jpg"
-    };
+    const pageName = "Contact";
+    const [headerDetails, setHeaderDetails] = useState([]);
+    const [contactDetails, setContactDetails] = useState([]);
+    const [socials, setSocials] = useState([]);
+    const [news, setNews] = useState([]);
 
-    const portrait = "/img/hand-in-hair.jpg";
-
-    const socials = [
-        {
-            site: "Casting Networks",
-            url: "https://app.castingnetworks.com/talent/public-profile/ae921fb6-9157-11ea-9bfa-0291f623b406",
-            icon: "/img/socials/casting-networks.jpg"
-        },
-        {
-            site: "Instagram",
-            url: "https://www.instagram.com/danayangello",
-            icon: "/img/socials/instagram.jpg"
-        }
-    ];
-
-    const news = [
-        {
-            image: "/img/over-the-shoulder-square.jpg",
-            title: "VoyageLA: ",
-            atl: "Meet Dana Yangello of Dancing with Dana in Burbank",
-            preview: 
-`
-Dana, can you briefly walk us through your story – how you started and how you got to where you are today.
-I am an actor, improviser, and ballroom dancer, located in Burbank, CA. I was born and raised in South Jersey, where my love for performing and connecting with others through dance began. I grew up in a family that was always the first on the dance floor and the last to leave. My family will always be my greatest influence and support system....
-`
-        }
-    ];
-    
-    const contactInfo = [
-        {
-            type: "Email",
-            value: "dyangello@gmail.com"
-        },
-        {  
-            type: "Phone",
-            value: "856.469.5515"
-        }
-    ];
-
+    useEffect(() => {
+        getPageHeaderDetails(pageName).then(setHeaderDetails).catch(console.error);
+        getContactDetails().then(setContactDetails).catch(console.error);
+        getSocials().then(setSocials).catch(console.error);
+        getTheNews().then(setNews).catch(console.error);
+    }, []);
+      
+    const {portrait, ...contactInfo} = contactDetails;
     return (
         <html lang="en">
-            <head>
-                <link rel="icon" href='/img/favicon.ico'/>
-            </head>
+            <Head pageName={pageName}/>
             <body className="bg-dark-gray">
                 <ContactHeader
                     pageName={headerDetails.pageName}

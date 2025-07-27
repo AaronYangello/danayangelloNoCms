@@ -4,6 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getGalleryVideos } from '@/app/actions'
 
 import '@/styles/globals.css';
+import Head from '@/app/Head';
 import GalleryHeader from '@/app/Gallery/GalleryHeader';
 import VideoSection from '@/app/Gallery/VideoSection';
 
@@ -24,9 +25,7 @@ export default function Gallery() {
 
     return (
         <html lang="en">
-            <head>
-                <link rel="icon" href='/img/favicon.ico'/>
-            </head>
+            <Head pageName={pageName}/>
             <body className="bg-dark-gray">
                 <GalleryHeader
                     pageName={headerDetails.pageName}

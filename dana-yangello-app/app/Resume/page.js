@@ -4,6 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getResumeDetails } from '@/app/actions'
 
 import '@/styles/globals.css';
+import Head from '@/app/Head';
 import ResumeHeader from '@/app/Resume/ResumeHeader';
 
 export default function Resume() {
@@ -18,9 +19,7 @@ export default function Resume() {
 
     return (
         <html lang="en">
-            <head>
-                <link rel="icon" href='/img/favicon.ico'/>
-            </head>
+            <Head pageName={pageName}/>
             <body className="bg-dark-gray">
                 <ResumeHeader
                     pageName={headerDetails.pageName}

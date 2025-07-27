@@ -12,7 +12,7 @@ export default function News({ className, news}) {
                         />
                         <p className="text-white text-lg text-open-sans lg:ml-8 w-full">{item.preview}</p>
                     </div>
-                    <p className="text-white text-sm hover:italic text-open-sans mt-2 text-center"><a className="text-white bold" href={item.url} target="_blank" rel="noopener noreferrer">Read more!</a></p>
+                    <p className="text-white text-sm hover:italic text-open-sans mt-2 text-center"><a className="text-white bold" href={item.url} target="_blank" rel="noopener noreferrer">READ MORE!</a></p>
                 </div>
             ))}
         </div>

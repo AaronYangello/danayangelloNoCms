@@ -4,6 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getHomePageSections } from '@/app/actions'
 
 import '@/styles/globals.css'; 
+import Head from '@/app/Head';
 import HomePageHeader from '@/app/HomePageHeader';
 import HomePageSection from '@/app/HomePageSection';
 
@@ -19,9 +20,7 @@ export default function Home() {
 
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href='/img/favicon.ico'/>
-      </head>
+      <Head pageName={pageName}/>
       <body>
         <HomePageHeader
           pageName={headerDetails.pageName}
