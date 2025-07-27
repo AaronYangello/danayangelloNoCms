@@ -4,7 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getHomePageSections } from '@/app/actions'
 
 import '@/styles/globals.css'; 
-import Head from '@/app/Head';
+import Head from '@/components/Head';
 import HomePageHeader from '@/app/HomePageHeader';
 import HomePageSection from '@/app/HomePageSection';
 

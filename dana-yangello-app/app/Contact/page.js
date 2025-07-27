@@ -6,7 +6,7 @@ import { getSocials } from '@/app/actions'
 import { getTheNews } from '@/app/actions'
 
 import '@/styles/globals.css';
-import Head from '@/app/Head';
+import Head from '@/components/Head';
 import ContactHeader from '@/app/Contact/ContactHeader';
 import Socials from '@/app/Contact/Socials';
 import News from '@/app/Contact/News';

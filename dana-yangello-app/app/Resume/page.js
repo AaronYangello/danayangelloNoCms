@@ -4,7 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getResumeDetails } from '@/app/actions'
 
 import '@/styles/globals.css';
-import Head from '@/app/Head';
+import Head from '@/components/Head';
 import ResumeHeader from '@/app/Resume/ResumeHeader';
 
 export default function Resume() {

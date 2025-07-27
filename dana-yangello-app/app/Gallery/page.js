@@ -4,7 +4,7 @@ import { getPageHeaderDetails } from '@/app/actions'
 import { getGalleryVideos } from '@/app/actions'
 
 import '@/styles/globals.css';
-import Head from '@/app/Head';
+import Head from '@/components/Head';
 import GalleryHeader from '@/app/Gallery/GalleryHeader';
 import VideoSection from '@/app/Gallery/VideoSection';
 
