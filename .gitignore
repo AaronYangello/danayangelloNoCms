@@ -1,0 +1,51 @@
+# ── Dependencies ──────────
+node_modules/               
+.pnp/                       
+.pnp.js
+
+# ── Build outputs ─────────
+.next/                      
+out/                        
+dist/                       
+
+# ── Local env files & secre
+.env.local                  
+.env.*.local                
+credentials.json            
+secret*.json                
+*.key                       
+*.pem                       
+
+# ── Logs & reports ────────
+npm-debug.log*              
+yarn-debug.log*             
+yarn-error.log*             
+pnpm-debug.log*             
+debug.log*                  
+coverage/                   
+*.lcov                      
+
+# ── OS generated ──────────
+.DS_Store                   
+Thumbs.db                   
+desktop.ini                 
+
+# ── IDEs & editors ────────
+.vscode/                    
+.idea/                      
+*.suo                       
+*.user                      
+
+# ── Optional—if you use the
+.eslintcache                
+.next-cache/                
+.cache/                     
+turbo/                      
+.cache-loader/              
+.tmp/                       
+
+# ── Miscellaneous ─────────
+*.bak                       
+*.swp                       
+*~                          
+*.png
