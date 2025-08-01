@@ -1,42 +1,63 @@
-'use server';
-import fs   from 'fs';
-import path from 'path';
-import { google } from 'googleapis';
+'use server'
+import { google } from 'googleapis'
+import { createPrivateKey } from 'crypto'
 
 async function getAuthClient() {
-  const credPath = path.join(process.cwd(), 'credentials.json');
-  if (!fs.existsSync(credPath)) {
-    throw new Error(`⚠️ credentials.json not found at ${credPath}`);
+  // grab & un-escape your env
+  let rawKey = process.env.GOOGLE_SA_PRIVATE_KEY || ''
+  const clientEmail = process.env.GOOGLE_SA_CLIENT_EMAIL
+
+  if (!rawKey || !clientEmail) {
+    throw new Error('GOOGLE_SA_PRIVATE_KEY and GOOGLE_SA_CLIENT_EMAIL are required')
   }
 
-  // Let GoogleAuth read your JSON key for you:
-  const auth = new google.auth.GoogleAuth({
-    keyFile: credPath,
-    scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
-  });
+  const privateKey = rawKey.replace(/\\n/g, '\n').replace('\"','')
+ 
 
-  return auth.getClient();
+  // build a normalized KeyObject → PEM (PKCS#8)
+  const keyObject = createPrivateKey({
+    key: privateKey,
+    format: 'pem',
+    type: 'pkcs8',
+  })
+  const normalizedPem = keyObject.export({
+    format: 'pem',
+    type: 'pkcs8',
+  })
+
+  // now feed that into the JWT client
+  const jwt = new google.auth.JWT({
+    email: clientEmail,
+    key: normalizedPem,
+    scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+  })
+
+  // this step should now succeed without OpenSSL errors
+  await jwt.authorize()
+  return jwt
 }
 
 export async function fetchSheetData(spreadsheetId, sheetName) {
-  const authClient = await getAuthClient();
-  const sheets = google.sheets({ version: 'v4', auth: authClient });
+  if (!spreadsheetId) throw new Error('⚠️ spreadsheetId is required')
+
+  const authClient = await getAuthClient()
+  const sheets = google.sheets({ version: 'v4', auth: authClient })
 
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId,
     range: sheetName,
-  });
+  })
 
-  const allRows = res.data.values || [];
-  if (allRows.length === 0) return [];
-  const [headers, ...dataRows] = allRows;
-  const objects = dataRows.map(row =>
-    headers.reduce((obj, header, idx) => {
-      obj[header] = row[idx] ?? ''; 
-      return obj;
+  const rows = res.data.values || []
+  if (rows.length < 2) return rows.slice(1).map(r => ({}))
+
+  const [headers, ...dataRows] = rows
+  return dataRows.map(row =>
+    headers.reduce((o, h, i) => {
+      o[h] = row[i] || ''
+      return o
     }, {})
-  );
-  return objects;
+  )
 }
 
 export async function getPageHeaderDetails(pageName){
