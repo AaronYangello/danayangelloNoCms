@@ -6,7 +6,7 @@ export default function GalleryHeader({
 }) {
     return (
         <header className='relative min-h-[350px] py-8 bg-dark-gray'>
-            <div className="absolute top-0 right-0 z-10">
+            <div className="absolute top-0 right-0 z-50">
                 <NavBar 
                     activeItem={pageName} 
                     textColor='text-white'

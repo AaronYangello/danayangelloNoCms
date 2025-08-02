@@ -15,7 +15,7 @@ export default function HomePageHeader ({
                     backgroundPosition: "center center"
                 }}
             ></div>
-            <div className="absolute top-0 right-0 z-10">
+            <div className="absolute top-0 right-0 z-50">
                 <NavBar activeItem={pageName} />
             </div>
             <div className="relative z-10 flex flex-col items-center justify-center text-center mt-[150px] h-full text-dark-primary">
